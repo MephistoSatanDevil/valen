@@ -61,21 +61,14 @@ LANGUAGE ~Russian (translation by AERIE.ru)~
          ~valen/languages/american/setup.tra~
          ~valen/languages/russian/setup.tra~
          ~valen/languages/russian/epilogue.tra~
-LANGUAGE "Chinese-Simplified (translation by yun395,kalabaka)" "chs" 
-  ~valen/languages/american/setup.tra~
-  ~valen/languages/chs/setup.tra~		
-  ~valen/languages/american/epilogue.tra~
-  ~valen/languages/chs/epilogue.tra~
-LANGUAGE "Chinese-Traditional (translation by yun395,kalabaka)" "cht" 
-  ~valen/languages/american/setup.tra~
-  ~valen/languages/cht/setup.tra~		
-  ~valen/languages/american/epilogue.tra~
-  ~valen/languages/cht/epilogue.tra~
+LANGUAGE "Simplified Chinese(translation by yun395,kalabaka)" "schinese" 
+		~valen/languages/schinese/setup.tra~		
+		~valen/languages/schinese/epilogue.tra~
 LANGUAGE "Japanese (translation by ironthrone)" "japan" 
-  ~valen/languages/american/setup.tra~
-  ~valen/languages/japan/setup.tra~		
-  ~valen/languages/american/epilogue.tra~
-  ~valen/languages/japan/epilogue.tra~
+		~valen/languages/american/setup.tra~
+		~valen/languages/japan/setup.tra~		
+		~valen/languages/american/epilogue.tra~
+		~valen/languages/japan/epilogue.tra~
 
 BEGIN ~Valen~
 
