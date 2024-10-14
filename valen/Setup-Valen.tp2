@@ -27,50 +27,52 @@ END
 
 ALLOW_MISSING ~ar6200.bcs~ // ToB epilogues
 
-LANGUAGE "American English" "american" 
-  ~valen/languages/american/setup.tra~
-  ~valen/languages/american/epilogue.tra~
-LANGUAGE "Francais (traduction de Ly Meng, Laurent Duvernet et Cocobard)" "french" 
-  ~valen/languages/american/setup.tra~
-  ~valen/languages/french/setup.tra~
-  ~valen/languages/american/epilogue.tra~
-  ~valen/languages/french/epilogue.tra~
-LANGUAGE ~Traducción al Español (hecha por Clan REO)~ "spanish"
-  ~valen/languages/american/setup.tra~
-  ~valen/languages/spanish/setup.tra~
-  ~valen/languages/american/epilogue.tra~
-  ~valen/languages/spanish/epilogue.tra~
-LANGUAGE ~Deutsche Sprache (Übersetzung durch Sebastian de Waal & Thalantyr & Tanis & Falk)~ 
-  "german"
-  ~valen/languages/american/setup.tra~
-  ~valen/languages/german/setup.tra~
-  ~valen/languages/american/epilogue.tra~
+LANGUAGE "American English"
+		"american" 
+		~valen/languages/american/setup.tra~
+		~valen/languages/american/epilogue.tra~
+  
+LANGUAGE "Francais (traduction de Ly Meng, Laurent Duvernet et Cocobard)"
+		"french" 
+		~valen/languages/french/setup.tra~
+		~valen/languages/french/epilogue.tra~
+
+LANGUAGE ~TraducciÃµd al EspaÃ¨ÃŒl (hecha por Clan REO)~
+		"spanish"
+		~valen/languages/spanish/setup.tra~
+		~valen/languages/spanish/epilogue.tra~
+
+LANGUAGE ~Deutsche Sprache (Ãœbersetzung durch Sebastian de Waal & Thalantyr & Tanis & Falk)~ 
+		"german"
+		~valen/languages/german/setup.tra~
+		~valen/languages/german/epilogue.tra~
+  
 LANGUAGE ~Polski je;zyk (Przet?umaczony przez Grzesiek Miazga)~ 
-  "polish"
-  ~valen/languages/american/setup.tra~
-  ~valen/languages/polish/setup.tra~
-  ~valen/languages/american/epilogue.tra~
-  ~valen/languages/polish/epilogue.tra~
+		"polish"
+		~valen/languages/polish/setup.tra~
+		~valen/languages/polish/epilogue.tra~
+  
 LANGUAGE ~Italiano (by Al17 e Kelvan, http://rtt.altervista.org)~
-   ~valen/languages/american/setup.tra~
-   ~valen/languages/italian/setup.tra~
-   ~valen/languages/american/epilogue.tra~
-   ~valen/languages/italian/epilogue.tra~
+		~italian~
+		~valen/languages/italian/setup.tra~
+		~valen/languages/italian/epilogue.tra~
+		
 LANGUAGE ~Russian (translation by AERIE.ru)~
          ~russian~
-         ~valen/languages/american/setup.tra~
          ~valen/languages/russian/setup.tra~
          ~valen/languages/russian/epilogue.tra~
-LANGUAGE "Simplified Chinese(translation by yun395,kalabaka)" "schinese" 
+		 
+LANGUAGE "Simplified Chinese"//(translation by yun395,kalabaka)
+		"schinese" 
 		~valen/languages/schinese/setup.tra~		
 		~valen/languages/schinese/epilogue.tra~
-LANGUAGE "Japanese (translation by ironthrone)" "japan" 
-		~valen/languages/american/setup.tra~
-		~valen/languages/japan/setup.tra~		
-		~valen/languages/american/epilogue.tra~
+		
+LANGUAGE "Japanese (translation by ironthrone)"
+		"japan" 
+		~valen/languages/japan/setup.tra~
 		~valen/languages/japan/epilogue.tra~
-
-BEGIN ~Valen~
+		
+BEGIN @4002
 
 ACTION_IF NOT FILE_EXISTS ~Data/25Dialog.bif~ THEN BEGIN
   PRINT @4001
@@ -108,18 +110,15 @@ COPY    ~valen/items/valenh4.itm~   ~override/valenh4.itm~ SAY NAME2 @7 SAY DESC
 COPY    ~valen/items/valenh5.itm~   ~override/valenh5.itm~ SAY NAME2 @7 SAY DESC @11
 
 COMPILE ~valen/dialogs/valen.d~
-  USING ~valen/languages/american/valen.tra~
-        ~valen/%s/valen.tra~
+  USING ~valen/languages/%LANGUAGE%/valen.tra~
 
 COMPILE ~valen/dialogs/valenint.d~
-  USING ~valen/languages/american/valenint.tra~
-        ~valen/languages/%s/valenint.tra~
+  USING ~valen/languages/%LANGUAGE%/valenint.tra~
 
 ACTION_IF FILE_EXISTS ~Data/25Dialog.bif~ THEN BEGIN
   PRINT ~Installing ToB dialogue.~
   COMPILE ~valen/dialogs/valentob.d~
-    USING ~valen/languages/american/valentob.tra~
-          ~valen/languages/%s/valentob.tra~
+    USING ~valen/languages/%LANGUAGE%/valentob.tra~
 END
 
 APPEND ~pdialog.2da~
@@ -156,15 +155,14 @@ COPY    ~override/valensla.bcs~      ~override/valensla.bcs~
   REPLACE 99994 @27 
   REPLACE 99995 @28 
 COMPILE ~valen/hunt1/dialogs/hunt1.d~
-  USING ~valen/languages/american/hunt1.tra~
-        ~valen/languages/%s/hunt1.tra~
+  USING ~valen/languages/%LANGUAGE%/hunt1.tra~
 
 // ToB Epilogue
 COPY ~valen/valenend.2da~ ~override/valenend.2da~ REPLACE ~999999~ @999999
 EXTEND_TOP ~ar6200.bcs~ ~override/valenend.bcs~
 
 
-BEGIN ~Give More Creatures Protection From Level Drain & Undead~ 
+BEGIN @4003
 DESIGNATED 10 // 1 used to be "anti paladin kit" 
 
 COPY ~valen/items/levimm.itm~ ~override~ 
@@ -215,7 +213,7 @@ COPY_EXISTING_REGEXP GLOB ".*\.CRE" "override"
   END 
   BUT_ONLY_IF_IT_CHANGES
 
-BEGIN ~Add reaction to non evil priest (mandatory on original Weimer's Valen mod)~
+BEGIN @4004
 COMPILE ~valen/priest~ 
 EXTEND_TOP_REGEXP ~.*\(PRIE\|CLER\|HEAL\|PRST\|SHAM\).*\.BCS~ ~override/priest.bcs~ 
 AT_INTERACTIVE_EXIT ~VIEW valen\README-Valen.txt~

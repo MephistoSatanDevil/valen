@@ -42,13 +42,12 @@ Like those of all vampires, Valen's claws are a conduit to the negative material
 @27 = ~Lathander, purge this evil! Don't let it recover!~
 @28 = ~Morninglord! Protect this humble servant!~
 
-@4001 = ~
-
-** WARNING **
+@4001 = ~** WARNING **
 
 It looks like you do not have BG2: Throne of Bhaal installed. Valen
 requires ToB. This installation will probably fail. Go install ToB! 
 
-** WARNING ** 
-
-~
+** WARNING ** ~
+@4002 = ~Valen~
+@4003 = ~Give More Creatures Protection From Level Drain & Undead~
+@4004 = ~Add reaction to non evil priest (mandatory on original Weimer's Valen mod)~

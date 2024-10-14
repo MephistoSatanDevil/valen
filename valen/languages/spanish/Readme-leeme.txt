@@ -1,4 +1,4 @@
-Spanish translation was made by:       Traducción al español hecha por:
+Spanish translation was made by:       Traduccié«‡ al espaé§‰l hecha por:
 -----------------------------          --------------------------------
 [REO]-Arturo                           [REO]-Arturo
 [REO]-Drohen-Trohen                    [REO]-Drohen-Trohen
@@ -10,6 +10,6 @@ Coordinated by:                        Coordinado por:
 ---------------                        ---------------
 [REO]-Artemis_Entreri                  [REO]-Artemis_Entreri
 
-Web page:                              Página web:
+Web page:                              Pé†™ina web:
 ---------                              -----------
 http://clanreo.ionichost.com           http://clanreo.ionichost.com
