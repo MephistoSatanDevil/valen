@@ -64,6 +64,7 @@ LANGUAGE ~Russian (translation by AERIE.ru)~
 		 
 LANGUAGE "Simplified Chinese"//(translation by yun395,kalabaka)
 		"schinese" 
+		~valen/languages/schinese/prompts.tra~
 		~valen/languages/schinese/setup.tra~		
 		~valen/languages/schinese/epilogue.tra~
 		
