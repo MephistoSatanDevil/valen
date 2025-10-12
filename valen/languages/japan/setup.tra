@@ -52,3 +52,6 @@ requires ToB. This installation will probably fail. Go install ToB!
 ** WARNING ** 
 
 ~
+@4002 = ~Valen~
+@4003 = ~Give More Creatures Protection From Level Drain & Undead~
+@4004 = ~Add reaction to non evil priest (mandatory on original Weimer's Valen mod)~

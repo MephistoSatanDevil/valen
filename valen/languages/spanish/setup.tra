@@ -43,5 +43,12 @@ Como las de todos los vampiros, las garras de Valen son un conducto hacia el pla
 @27 = ~¡Lathander, purga este demonio! ¡No le dejes recuperarse!~
 @28 = ~¡Diós de la mañana! ¡Protege a este humilde siervo!~
 
+@4001 = ~** WARNING **
 
+It looks like you do not have BG2: Throne of Bhaal installed. Valen
+requires ToB. This installation will probably fail. Go install ToB! 
 
+** WARNING ** ~
+@4002 = ~Valen~
+@4003 = ~Give More Creatures Protection From Level Drain & Undead~
+@4004 = ~Add reaction to non evil priest (mandatory on original Weimer's Valen mod)~

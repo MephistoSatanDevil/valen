@@ -61,23 +61,17 @@ LANGUAGE ~Russian (translation by AERIE.ru)~
          ~valen/languages/american/setup.tra~
          ~valen/languages/russian/setup.tra~
          ~valen/languages/russian/epilogue.tra~
-LANGUAGE "Chinese-Simplified (translation by yun395,kalabaka)" "chs" 
-  ~valen/languages/american/setup.tra~
-  ~valen/languages/chs/setup.tra~		
-  ~valen/languages/american/epilogue.tra~
-  ~valen/languages/chs/epilogue.tra~
-LANGUAGE "Chinese-Traditional (translation by yun395,kalabaka)" "cht" 
-  ~valen/languages/american/setup.tra~
-  ~valen/languages/cht/setup.tra~		
-  ~valen/languages/american/epilogue.tra~
-  ~valen/languages/cht/epilogue.tra~
+LANGUAGE ~Chinese-Simplified (translation by yun395,kalabaka,MephistoSatanDevil)~
+         ~schinese~
+         ~valen/languages/schinese/setup.tra~
+         ~valen/languages/schinese/epilogue.tra~
 LANGUAGE "Japanese (translation by ironthrone)" "japan" 
   ~valen/languages/american/setup.tra~
   ~valen/languages/japan/setup.tra~		
   ~valen/languages/american/epilogue.tra~
   ~valen/languages/japan/epilogue.tra~
 
-BEGIN ~Valen~
+BEGIN @4002
 
 ACTION_IF NOT FILE_EXISTS ~Data/25Dialog.bif~ THEN BEGIN
   PRINT @4001
@@ -171,7 +165,7 @@ COPY ~valen/valenend.2da~ ~override/valenend.2da~ REPLACE ~999999~ @999999
 EXTEND_TOP ~ar6200.bcs~ ~override/valenend.bcs~
 
 
-BEGIN ~Give More Creatures Protection From Level Drain & Undead~ 
+BEGIN @4003 
 DESIGNATED 10 // 1 used to be "anti paladin kit" 
 
 COPY ~valen/items/levimm.itm~ ~override~ 
@@ -222,7 +216,7 @@ COPY_EXISTING_REGEXP GLOB ".*\.CRE" "override"
   END 
   BUT_ONLY_IF_IT_CHANGES
 
-BEGIN ~Add reaction to non evil priest (mandatory on original Weimer's Valen mod)~
+BEGIN @4004
 COMPILE ~valen/priest~ 
 EXTEND_TOP_REGEXP ~.*\(PRIE\|CLER\|HEAL\|PRST\|SHAM\).*\.BCS~ ~override/priest.bcs~ 
 AT_INTERACTIVE_EXIT ~VIEW valen\README-Valen.txt~
