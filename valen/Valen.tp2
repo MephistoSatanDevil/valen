@@ -1,5 +1,3 @@
-
-
 BACKUP ~valen/backup~
 AUTHOR ~weimer@cs.berkeley.edu~
 
@@ -137,6 +135,7 @@ EXTEND_TOP ~ar0902.bcs~ ~override/ar0902.bcs~
 EXTEND_TOP ~ar0903.bcs~ ~override/ar0903.bcs~
 EXTEND_TOP ~sht0903.bcs~ ~override/sht0903.bcs~
 EXTEND_TOP ~sht0902.bcs~ ~override/sht0903.bcs~
+
 
 // The Vampire Hunters
 COMPILE ~valen/hunt1/scripts~
