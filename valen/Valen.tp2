@@ -33,12 +33,12 @@ LANGUAGE "Francais (traduction de Ly Meng, Laurent Duvernet et Cocobard)" "frenc
   ~valen/languages/french/setup.tra~
   ~valen/languages/american/epilogue.tra~
   ~valen/languages/french/epilogue.tra~
-LANGUAGE ~Traducción al Español (hecha por Clan REO)~ "spanish"
+LANGUAGE ~TraducciÃ³n al EspaÅ„ol (hecha por Clan REO)~ "spanish"
   ~valen/languages/american/setup.tra~
   ~valen/languages/spanish/setup.tra~
   ~valen/languages/american/epilogue.tra~
   ~valen/languages/spanish/epilogue.tra~
-LANGUAGE ~Deutsche Sprache (Übersetzung durch Sebastian de Waal & Thalantyr & Tanis & Falk)~ 
+LANGUAGE ~Deutsche Sprache (Ãœbersetzung durch Sebastian de Waal & Thalantyr & Tanis & Falk)~ 
   "german"
   ~valen/languages/american/setup.tra~
   ~valen/languages/german/setup.tra~
@@ -89,7 +89,7 @@ COPY_EXISTING ~C6VALEN.CRE~     ~override/c6valen.cre~
 COPY    ~valen/valen.cre~       ~override/valen.cre~
   SAY BIO @15
 
-COMPILE ~valen/scripts~
+COMPILE ~valen/scripts/valen.baf~
   
 COPY    ~valen/valen.spl~     ~override/valen.spl~ SAY NAME1 @1 SAY NAME2 @1
 COPY    ~valen/items/valena1.itm~   ~override/valena1.itm~ SAY NAME2 @2 SAY DESC @3 
@@ -131,10 +131,10 @@ APPEND ~pdialog.2da~
 UNLESS ~Valen~
 IF ~25POST~
 
-EXTEND_TOP ~ar0902.bcs~ ~override/ar0902.bcs~
-EXTEND_TOP ~ar0903.bcs~ ~override/ar0903.bcs~
-EXTEND_TOP ~sht0903.bcs~ ~override/sht0903.bcs~
-EXTEND_TOP ~sht0902.bcs~ ~override/sht0903.bcs~
+EXTEND_TOP ~ar0902.bcs~ ~valen/scripts/ar0902.baf~
+EXTEND_TOP ~ar0903.bcs~ ~valen/scripts/ar0903.baf~
+EXTEND_TOP ~sht0903.bcs~ ~valen/scripts/sht0903.baf~
+EXTEND_TOP ~sht0902.bcs~ ~valen/scripts/sht0903.baf~
 
 
 // The Vampire Hunters
@@ -161,7 +161,7 @@ COMPILE ~valen/hunt1/dialogs/hunt1.d~
 
 // ToB Epilogue
 COPY ~valen/valenend.2da~ ~override/valenend.2da~ REPLACE ~999999~ @999999
-EXTEND_TOP ~ar6200.bcs~ ~override/valenend.bcs~
+EXTEND_TOP ~ar6200.bcs~ ~valen/scripts/valenend.baf~
 
 
 BEGIN @4003 
@@ -216,6 +216,6 @@ COPY_EXISTING_REGEXP GLOB ".*\.CRE" "override"
   BUT_ONLY_IF_IT_CHANGES
 
 BEGIN @4004
-COMPILE ~valen/priest~ 
-EXTEND_TOP_REGEXP ~.*\(PRIE\|CLER\|HEAL\|PRST\|SHAM\).*\.BCS~ ~override/priest.bcs~ 
-AT_INTERACTIVE_EXIT ~VIEW valen\README-Valen.txt~
+//COMPILE ~valen/priest~ 
+EXTEND_TOP_REGEXP ~.*\(PRIE\|CLER\|HEAL\|PRST\|SHAM\).*\.BCS~ ~valen/priest/priest.baf~ 
+AT_INTERACTIVE_EXIT ~VIEW valen/README-Valen.txt~
